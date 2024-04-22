@@ -4,7 +4,10 @@ workflows:
   test-deploy:
     jobs:
       - test
-
+      - approve:
+          type: approval
+          requires:
+            - test
 jobs:
   test:
     docker:
